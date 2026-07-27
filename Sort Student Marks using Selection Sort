@@ -1,0 +1,9 @@
+marks = list(map(int, input("Enter marks: ").split()))
+n = len(marks)
+for i in range(n - 1):
+    min_index = i
+    for j in range(i + 1, n):
+        if marks[j] < marks[min_index]:
+            min_index = j
+    marks[i], marks[min_index] = marks[min_index], marks[i]
+print("Sorted Marks:", *marks)
